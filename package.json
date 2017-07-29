@@ -1,0 +1,12 @@
+{
+  "name": "studio51c",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:RickyMarou/studio51c.git",
+  "author": "marwan <marwan.zibaoui@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "pm2": "^2.6.1"
+  }
+}
