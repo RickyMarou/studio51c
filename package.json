@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js -i max — name=studio51c",
-    "restart": "pm2 restart all",
+    "start": "node index.js",
     "test": "ava"
   },
   "repository": "git@github.com:RickyMarou/studio51c.git",
