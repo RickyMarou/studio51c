@@ -1,13 +1,14 @@
-const express = require("express");
-const app = express();
-var path = require("path");
+const containers = [...document.querySelectorAll(".letter-outer")];
 
-app.set("port", process.env.PORT || 5000);
+containers.forEach(container => {
+  const letter = container.querySelector(".letter");
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname + "/index.html"));
-});
+  letter.addEventListener("animationend", e => {
+    console.log("animationend");
+    letter.classList.remove("animate");
+  });
 
-app.listen(app.get("port"), function() {
-  console.log(`Example app listening on port ${app.get("port")}!`);
+  container.addEventListener("mouseenter", () => {
+    letter.classList.add("animate");
+  });
 });

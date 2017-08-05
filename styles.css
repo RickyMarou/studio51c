@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+:root {
+  --gutter: 20px;
+  --title-font: 'Cantata One', serif;
+  --text-font: 'Roboto', sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  font-size: 32px;
+  letter-spacing: 0.1em;
+  font-family: var(--title-font);
+}
+
+.letter-outer {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 40px;
+  line-height: 40px;
+  text-transform: lowercase;
+  perspective: 1000px;
+}
+
+.letter-outer:first-child {
+  text-transform: uppercase;
+  perspective: 200px;
+}
+
+.letter {
+  transition: 0.6s;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.letter.animate {
+  animation-name: flip;
+  animation-duration: 1.5s;
+}
+
+.letter-inner {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.locations {
+  margin-top: var(--gutter);
+  font-family: var(--text-font);
+  justify-content: space-between;
+  display: flex;
+}
+.locations-item {
+  display: inline-flex;
+}
